@@ -307,7 +307,152 @@
                             </div>
                         </div>
                     </section>
-
+                    
+                    {/* Case Study: Retail Performance Engine */}
+                    <section id="case-study" className="py-24 bg-white">
+                      <div className="container mx-auto px-6">
+                        <div className="grid lg:grid-cols-2 gap-16 items-start">
+                          {/* Text column */}
+                          <div>
+                            <div className="inline-block px-4 py-1 bg-indigo-50 rounded-full text-indigo-700 text-xs font-bold uppercase tracking-widest mb-4">
+                              Case Study
+                            </div>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-4">
+                              Retail Performance Engine
+                            </h2>
+                            <p className="text-slate-600 text-lg mb-6">
+                              A data-driven analytics system that evaluates retail store performance, predicts expected sales, 
+                              and provides actionable business recommendations using machine learning and feature engineering.
+                            </p>
+                    
+                            <div className="grid md:grid-cols-2 gap-4 mb-8">
+                              <div className="bg-[#F8FAFC] border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Client Type
+                                </div>
+                                <div className="text-sm font-semibold text-slate-900">
+                                  Multi-store retail business
+                                </div>
+                              </div>
+                              <div className="bg-[#F8FAFC] border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Tech Stack
+                                </div>
+                                <div className="text-sm font-semibold text-slate-900">
+                                  Python, ML, Feature Engineering, Streamlit
+                                </div>
+                              </div>
+                            </div>
+                    
+                            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-3">
+                              Problem
+                            </h3>
+                            <p className="text-slate-600 mb-6">
+                              The business had multiple stores but no clear, unified view of which locations were underperforming, 
+                              what their expected sales should be, or which operational levers to adjust. Decisions were based on 
+                              gut feeling instead of data.
+                            </p>
+                    
+                            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-3">
+                              Solution
+                            </h3>
+                            <p className="text-slate-600 mb-6">
+                              I designed a Retail Performance Engine that consolidates store data, engineers key features 
+                              (traffic, seasonality, product mix), and uses machine learning models to estimate 
+                              expected sales for each store. The system surfaces performance gaps and suggests specific actions 
+                              such as stock optimization, promo focus, or staffing adjustments.
+                            </p>
+                    
+                            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-3">
+                              Impact
+                            </h3>
+                            <ul className="space-y-2 text-slate-600 mb-8 list-disc pl-5">
+                              <li>Clear ranking of stores by actual vs. expected performance.</li>
+                              <li>Ability to identify underperforming locations and drill into possible causes.</li>
+                              <li>Faster decision-making for campaigns, inventory, and staffing using data instead of guesswork.</li>
+                            </ul>
+                    
+                            {/* Optional: link to GitHub or notebook */}
+                            {/* Replace # with your real GitHub / dashboard link */}
+                            <a 
+                              href="https://retail-perfomance-engine-enwzeujoemdsiaq2btuzdg.streamlit.app/"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700"
+                            >
+                              <i data-lucide="external-link" className="w-4 h-4"></i>
+                              View project details / code
+                            </a>
+                          </div>
+                    
+                          {/* Visual / metrics column */}
+                          <div className="bg-[#F8FAFC] border border-slate-100 rounded-[32px] p-8 lg:p-10 shadow-sm">
+                            <div className="flex items-center justify-between mb-6">
+                              <div>
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Engine Summary
+                                </div>
+                                <div className="text-xl font-bold text-slate-900">
+                                  Store Performance Snapshot
+                                </div>
+                              </div>
+                              <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white">
+                                <i data-lucide="bar-chart-3" className="w-5 h-5"></i>
+                              </div>
+                            </div>
+                    
+                            <div className="space-y-5 mb-8">
+                              <div>
+                                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                                  <span>Stores analyzed</span>
+                                  <span>100%</span>
+                                </div>
+                                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                  <div className="h-full w-[100%] bg-indigo-500"></div>
+                                </div>
+                              </div>
+                              <div>
+                                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                                  <span>Underperforming stores flagged</span>
+                                  <span>e.g. 18%</span>
+                                </div>
+                                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                  <div className="h-full w-[18%] bg-amber-500"></div>
+                                </div>
+                              </div>
+                              <div>
+                                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                                  <span>Time to generate insights</span>
+                                  <span>Minutes, not days</span>
+                                </div>
+                                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                  <div className="h-full w-[80%] bg-emerald-500"></div>
+                                </div>
+                              </div>
+                            </div>
+                    
+                            <div className="grid grid-cols-2 gap-4">
+                              <div className="bg-white border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Techniques
+                                </div>
+                                <div className="text-sm text-slate-700">
+                                  Feature engineering, regression / predictive modeling, KPI design.
+                                </div>
+                              </div>
+                              <div className="bg-white border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Deliverables
+                                </div>
+                                <div className="text-sm text-slate-700">
+                                  Re-usable engine, dashboards, store-level performance reports.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
                     {/* Testimonials */}
                     <section className="py-24 bg-white">
                         <div className="container mx-auto px-6">
