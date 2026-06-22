@@ -33,9 +33,11 @@
 </head>
 <body>
     <div id="root"></div>
- /* Animation */
-    <script type="text/babel">
-        const { useState, useEffect, useRef, useCallback } = React;
+    <script id="app-jsx" type="text/plain">
+        /* @jsx React.createElement */
+        /* @jsxFrag React.Fragment */
+        /* Animation */
+        const { useState, useEffect, useRef } = React;
         const useCountUp = (target, duration = 1800, start = false) => {
         const [count, setCount] = useState(0);
             useEffect(() => {
@@ -702,6 +704,20 @@
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
+    </script>
+
+    <script>
+        // Compile the JSX block with Babel using classic runtime, then execute.
+        (function(){
+            try {
+                const src = document.getElementById('app-jsx').textContent;
+                const out = Babel.transform(src, { presets: [['react', { runtime: 'classic' }]] }).code;
+                // eslint-disable-next-line no-eval
+                eval(out);
+            } catch (e) {
+                console.error('JSX compile error', e);
+            }
+        })();
     </script>
 </body>
 </html>
