@@ -100,99 +100,6 @@
                 </div>
             );
         };
-        /* Process Section */
-        const ProcessSection = () => {
-        const steps = [
-                {
-                    number: "01",
-                    title: "Discovery Call",
-                    desc: "We start with a focused conversation — via WhatsApp or email — to understand your data challenge, current setup, and what success looks like for you.",
-                    icon: "message-circle",
-                    color: "bg-indigo-50 text-indigo-600",
-                    accent: "group-hover:bg-indigo-600"
-                },
-                {
-                    number: "02",
-                    title: "Diagnosis & Blueprint",
-                    desc: "I analyse your current workflow, identify the exact bottlenecks, and deliver a clear action plan before any work begins. No surprises.",
-                    icon: "search",
-                    color: "bg-amber-50 text-amber-600",
-                    accent: "group-hover:bg-amber-500"
-                },
-                {
-                    number: "03",
-                    title: "Build & Deliver",
-                    desc: "I engineer the solution — whether that's a database, automation, or analytics engine — with regular updates so you're never in the dark.",
-                    icon: "cpu",
-                    color: "bg-emerald-50 text-emerald-600",
-                    accent: "group-hover:bg-emerald-500"
-                },
-                {
-                    number: "04",
-                    title: "Handover & Support",
-                    desc: "You receive full documentation, a walkthrough of the system, and post-delivery support so your team can hit the ground running.",
-                    icon: "check-circle-2",
-                    color: "bg-blue-50 text-blue-600",
-                    accent: "group-hover:bg-blue-500"
-                }
-            ];
-        
-            return (
-                <section className="py-24 bg-[#F8FAFC] border-t border-slate-100">
-                    <div className="container mx-auto px-6">
-                        {/* Header */}
-                        <div className="text-center max-w-2xl mx-auto mb-20">
-                            <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-                                <i data-lucide="map" className="w-3 h-3"></i> The Process
-                            </div>
-                            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-4">
-                                From first message to final delivery.
-                            </h2>
-                            <p className="text-slate-500 text-lg">
-                                A simple, transparent process — so you always know where your project stands.
-                            </p>
-                        </div>
-        
-                        {/* Steps grid */}
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-                            {/* Connector line — desktop only */}
-                            <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent z-0"></div>
-        
-                            {steps.map((s, i) => (
-                                <div
-                                    key={i}
-                                    className="group relative bg-white rounded-3xl p-8 border border-slate-100 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-50 transition-all duration-300"
-                                >
-                                    {/* Step number badge */}
-                                    <div className="absolute -top-4 left-8 bg-slate-900 text-white text-xs font-black px-3 py-1 rounded-full tracking-widest">
-                                        {s.number}
-                                    </div>
-        
-                                    {/* Icon */}
-                                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 mt-4 transition-all duration-300 ${s.color} ${s.accent} group-hover:text-white`}>
-                                        <i data-lucide={s.icon} className="w-6 h-6"></i>
-                                    </div>
-        
-                                    <h3 className="text-lg font-bold text-slate-900 mb-3">{s.title}</h3>
-                                    <p className="text-slate-500 leading-relaxed text-sm">{s.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-        
-                        {/* Bottom CTA */}
-                        <div className="text-center mt-16">
-                            <p className="text-slate-500 mb-6 text-lg">Ready to get started?</p>
-                            
-                                href="#contact"
-                                className="inline-flex items-center gap-2 bg-slate-900 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-indigo-600 transition-all shadow-xl"
-                            >
-                                <i data-lucide="arrow-right" className="w-5 h-5"></i> Start the Process
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            );
-        };
          /* Back to the app */
         const App = () => {
             const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -641,7 +548,6 @@
                       </div>
                     </section>
                     {/* Testimonials */}
-                <ProcessSection />
                     <section className="py-24 bg-white">
                         <div className="container mx-auto px-6">
                             <div className="text-center mb-16">
