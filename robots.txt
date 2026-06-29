@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firadwelt06.github.io/Adwelt-website/sitemap.xml
