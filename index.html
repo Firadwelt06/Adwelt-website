@@ -614,7 +614,7 @@
                                 Tech Stack
                                 </div>
                                 <div className="text-sm font-semibold text-slate-900">
-                                MySQL, Flask
+                                MySQL, Flask, Python3, HTML/CSS, Jinja2
                                 </div>
                             </div>
                             </div>
@@ -744,9 +744,14 @@
                                                     <div className="text-lg lg:text-xl font-bold text-slate-900 break-all">adeleyebukola587@gmail.com</div>
                                                 </div>
                                             </a>
+                                            
                                             <a href="https://www.linkedin.com/in/olorunbukola-adeleye-675b45256" target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
                                                 <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition-all">
-                                                    <i data-lucide="linkedin" className="w-7 h-7"></i>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-7 h-7" aria-hidden="true">
+                                                        <path d="M6.94 8.5a1.56 1.56 0 1 0 0-3.12 1.56 1.56 0 0 0 0 3.12Z" />
+                                                        <path d="M5.5 9.75h2.88V18H5.5z" />
+                                                        <path d="M10.5 9.75h2.76v1.12h.04c.38-.72 1.32-1.48 2.72-1.48 2.9 0 3.44 1.9 3.44 4.38V18h-2.88v-7.43c0-1.77-.03-4.04-2.46-4.04-2.46 0-2.84 1.92-2.84 3.9V18H10.5z" />
+                                                    </svg>
                                                 </div>
                                                 <div className="flex-1">
                                                     <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">LinkedIn</div>
@@ -755,11 +760,30 @@
                                             </a>
                                             <a href="https://www.instagram.com/adwelt6" target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
                                                 <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-all">
-                                                    <i data-lucide="instagram" className="w-7 h-7"></i>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-7 h-7" aria-hidden="true">
+                                                        <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                                                        <circle cx="12" cy="12" r="4.2" />
+                                                        <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+                                                    </svg>
                                                 </div>
                                                 <div className="flex-1">
                                                     <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Instagram</div>
-                                                    <div className="text-lg lg:text-xl font-bold text-slate-900">@YOUR-INSTAGRAM-HANDLE</div>
+                                                    <div className="text-lg lg:text-xl font-bold text-slate-900 flex items-center gap-2">
+                                                        <span>Follow</span>
+                                                        <span className="text-pink-600">@adwelt6</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.youtube.com/@adweltenterprise" target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
+                                                <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-7 h-7" aria-hidden="true">
+                                                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none" />
+                                                    </svg>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">YouTube</div>
+                                                    <div className="text-lg lg:text-xl font-bold text-slate-900">Subscribe to Adwelt</div>
                                                 </div>
                                             </a>
                                             <div className="flex items-center gap-6">
@@ -773,7 +797,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="bg-slate-50 p-6 lg:p-12 rounded-[32px] border border-slate-200">
                                         <h4 className="text-2xl font-bold mb-8">Send a Quick Brief</h4>
                                         <form className="space-y-6" onSubmit={handleFormSubmit}>
