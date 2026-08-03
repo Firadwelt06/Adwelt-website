@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adwelt Enterprises | Data Analyst & Database Management Consultant</title>
-    <meta name="description" content="Adwelt Enterprises is a remote data analytics consultancy offering database management, data analysis, workflow automation, and process optimization. Projects include Smart Result NG, Retail Performance Engine, and EduTrack school database system.">
+    <meta name="description" content="Adwelt Enterprises is a remote data analytics consultancy offering database management, data analysis, workflow automation, and process optimization. Projects include Smart Result NG, Retail Performance Engine, Loan Risk Engine, and EduTrack school database system.">
     <meta name="keywords" content="data analyst, database management, data analytics consultant, workflow automation, process optimization, remote data analyst, school database system, student records system, MySQL Flask developer">
     <meta name="author" content="Adwelt Enterprises">
     <link rel="canonical" href="https://firadwelt06.github.io/Adwelt-website/">
@@ -110,7 +110,7 @@
                 return () => observer.disconnect();
             }, []);
         
-            const projects = useCountUp(3, 1800, visible);
+            const projects = useCountUp(4, 1800, visible);
             const accuracy = useCountUp(100, 1800, visible);
             const clients  = useCountUp(10,  1500, visible);
         
@@ -691,6 +691,156 @@
                         </div>
                         </div>
                     </div>
+                    </section>
+                    {/* Case Study: Loan Risk & Approval Intelligence Engine */}
+                    <section id="loan-risk-engine" className="py-24 bg-white">
+                      <div className="container mx-auto px-6">
+                        <div className="grid lg:grid-cols-2 gap-16 items-start">
+                          {/* Text column */}
+                          <div>
+                            <div className="inline-block px-4 py-1 bg-teal-50 rounded-full text-teal-800 text-xs font-bold uppercase tracking-widest mb-4">
+                              Live · Case Study
+                            </div>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-4">
+                              Loan Risk &amp; Approval Intelligence Engine
+                            </h2>
+                            <p className="text-slate-600 text-lg mb-6">
+                              An end-to-end loan default risk engine — raw applicant data in, a live, explainable
+                              risk score and portfolio dashboard out. Built as a full pipeline rather than a single
+                              notebook: data validation, a SQL analytics layer, an explainable ML model, and a
+                              live interactive dashboard, backed by a real MySQL database.
+                            </p>
+
+                            <div className="grid md:grid-cols-2 gap-4 mb-8">
+                              <div className="bg-[#F8FAFC] border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Client Type
+                                </div>
+                                <div className="text-sm font-semibold text-slate-900">
+                                  Lending / financial services
+                                </div>
+                              </div>
+                              <div className="bg-[#F8FAFC] border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Tech Stack
+                                </div>
+                                <div className="text-sm font-semibold text-slate-900">
+                                  Python, MySQL, scikit-learn, SHAP, Streamlit
+                                </div>
+                              </div>
+                            </div>
+
+                            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-3">
+                              Problem
+                            </h3>
+                            <p className="text-slate-600 mb-6">
+                              Most loan-prediction projects stop at a notebook with an accuracy score — and often
+                              without checking whether the model is quietly cheating by using fields that already
+                              encode the answer. There was no live, explainable tool a lender could actually use
+                              to score a new applicant and understand why.
+                            </p>
+
+                            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-3">
+                              Solution
+                            </h3>
+                            <p className="text-slate-600 mb-6">
+                              I ran a leakage audit before modeling and found that two fields in the raw data were
+                              assigned using the same risk factors the model was meant to predict — both were
+                              removed. I then built a validated MySQL layer with analytical views, trained and
+                              evaluated a Random Forest / Logistic Regression pair with proper imbalance handling
+                              (the target is ~80/20), added SHAP-based explainability so every prediction comes
+                              with a plain-language reason, and shipped it as a live Streamlit dashboard backed by
+                              a securely scoped, read-only database user.
+                            </p>
+
+                            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-3">
+                              Impact
+                            </h3>
+                            <ul className="space-y-2 text-slate-600 mb-8 list-disc pl-5">
+                              <li>Caught a data-leakage issue before it reached production, avoiding a model that would have looked accurate but been useless in practice.</li>
+                              <li>~0.88 ROC-AUC using only legitimate, pre-outcome features.</li>
+                              <li>Every prediction ships with a SHAP-driven explanation, not just a score.</li>
+                              <li>Deployed live with a least-privilege database user — the deployed app cannot insert, modify, or delete anything.</li>
+                            </ul>
+
+                            <a
+                              href="https://loan-engine.streamlit.app/"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 text-teal-700 font-semibold hover:text-teal-800"
+                            >
+                              <i data-lucide="external-link" className="w-4 h-4"></i>
+                              View live dashboard
+                            </a>
+                          </div>
+
+                          {/* Visual / metrics column */}
+                          <div className="bg-[#F8FAFC] border border-slate-100 rounded-[32px] p-8 lg:p-10 shadow-sm">
+                            <div className="flex items-center justify-between mb-6">
+                              <div>
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Engine Summary
+                                </div>
+                                <div className="text-xl font-bold text-slate-900">
+                                  Risk Model Snapshot
+                                </div>
+                              </div>
+                              <div className="w-10 h-10 rounded-2xl bg-teal-700 flex items-center justify-center text-white">
+                                <i data-lucide="shield-check" className="w-5 h-5"></i>
+                              </div>
+                            </div>
+
+                            <div className="space-y-5 mb-8">
+                              <div>
+                                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                                  <span>ROC-AUC (leakage-free features)</span>
+                                  <span>~0.88</span>
+                                </div>
+                                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                  <div className="h-full w-[88%] bg-teal-600"></div>
+                                </div>
+                              </div>
+                              <div>
+                                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                                  <span>Applicants scored</span>
+                                  <span>20,000</span>
+                                </div>
+                                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                  <div className="h-full w-[100%] bg-emerald-500"></div>
+                                </div>
+                              </div>
+                              <div>
+                                <div className="flex justify-between text-xs text-slate-500 mb-2">
+                                  <span>Deployed app DB access</span>
+                                  <span>Read-only</span>
+                                </div>
+                                <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                                  <div className="h-full w-[100%] bg-amber-500"></div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                              <div className="bg-white border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Techniques
+                                </div>
+                                <div className="text-sm text-slate-700">
+                                  Leakage audit, class-imbalance handling, SHAP explainability.
+                                </div>
+                              </div>
+                              <div className="bg-white border border-slate-100 rounded-2xl p-4">
+                                <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                  Deliverables
+                                </div>
+                                <div className="text-sm text-slate-700">
+                                  Live dashboard, SQL analytics layer, explainable risk model.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </section>
                     {/* Testimonials */}
                     <section className="py-24 bg-white">
