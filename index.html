@@ -705,7 +705,7 @@
                               Loan Risk &amp; Approval Intelligence Engine
                             </h2>
                             <p className="text-slate-600 text-lg mb-6">
-                              An end-to-end loan default risk engine — raw applicant data in, a live, explainable
+                              An end-to-end loan default risk engine with raw applicant data in, a live, explainable
                               risk score and portfolio dashboard out. Built as a full pipeline rather than a single
                               notebook: data validation, a SQL analytics layer, an explainable ML model, and a
                               live interactive dashboard, backed by a real MySQL database.
@@ -734,9 +734,9 @@
                               Problem
                             </h3>
                             <p className="text-slate-600 mb-6">
-                              Most loan-prediction projects stop at a notebook with an accuracy score — and often
+                              Most loan-prediction projects stop at a notebook with an accuracy score and often
                               without checking whether the model is quietly cheating by using fields that already
-                              encode the answer. There was no live, explainable tool a lender could actually use
+                              encode the answer. There was no live, explainable tool that a lender could actually use
                               to score a new applicant and understand why.
                             </p>
 
@@ -745,11 +745,11 @@
                             </h3>
                             <p className="text-slate-600 mb-6">
                               I ran a leakage audit before modeling and found that two fields in the raw data were
-                              assigned using the same risk factors the model was meant to predict — both were
+                              assigned using the same risk factors the model was meant to predict and both were
                               removed. I then built a validated MySQL layer with analytical views, trained and
                               evaluated a Random Forest / Logistic Regression pair with proper imbalance handling
-                              (the target is ~80/20), added SHAP-based explainability so every prediction comes
-                              with a plain-language reason, and shipped it as a live Streamlit dashboard backed by
+                              , added a SHAP-based explainability so every prediction comes
+                              with a plain-language reason, and shipped it as a live Streamlit dashboard which is backed by
                               a securely scoped, read-only database user.
                             </p>
 
