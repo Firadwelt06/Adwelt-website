@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adwelt Enterprises | Data Analyst & Database Management Consultant</title>
-    <meta name="description" content="Adwelt Enterprises is a remote data analytics consultancy offering database management, data analysis, workflow automation, and process optimization. Projects include Smart Result NG, Retail Performance Engine, Loan Risk Engine, and EduTrack school database system.">
-    <meta name="keywords" content="data analyst, database management, data analytics consultant, workflow automation, process optimization, remote data analyst, school database system, student records system, MySQL Flask developer">
-    <meta name="author" content="Adwelt Enterprises">
+    <title>Adwelt | Data Engineer & Database Management Consultant</title>
+    <meta name="description" content="Adwelt provides data engineering and database management consulting, with Python, SQL, Excel, data automation, analytics, cleaning, dashboards, and business reporting.">
+    <meta name="keywords" content="data engineer, database management consultant, data automation, data analytics, Python, SQL, Excel, dashboards, business reporting, data cleaning">
+    <meta name="author" content="Adwelt">
     <link rel="canonical" href="https://firadwelt06.github.io/Adwelt-website/">
 
     <!-- Open Graph (Facebook/LinkedIn previews) -->
-    <meta property="og:title" content="Adwelt Enterprises | Data Analyst & Database Management Consultant">
-    <meta property="og:description" content="Remote data analytics consultancy specializing in database management, data analysis, workflow automation, and school database systems.">
+    <meta property="og:title" content="Adwelt | Data Engineer & Database Management Consultant">
+    <meta property="og:description" content="Data automation and analytics with Python, SQL, and Excel, from data cleaning to dashboards and business reporting.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firadwelt06.github.io/Adwelt-website/">
     <meta property="og:image" content="https://firadwelt06.github.io/Adwelt-website/adwelt-flat-icon.png">
 
     <!-- Twitter/X card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Adwelt Enterprises | Data Analyst & Database Management Consultant">
-    <meta name="twitter:description" content="Remote data analytics consultancy specializing in database management, data analysis, workflow automation, and school database systems.">
+    <meta name="twitter:title" content="Adwelt | Data Engineer & Database Management Consultant">
+    <meta name="twitter:description" content="Data automation and analytics with Python, SQL, and Excel, from data cleaning to dashboards and business reporting.">
     <meta name="twitter:image" content="https://firadwelt06.github.io/Adwelt-website/adwelt-flat-icon.png">
     <!-- Core Libraries -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -48,6 +48,7 @@
             padding: 0; 
             background: linear-gradient(145deg, #f5f8f4 0%, #ffffff 52%, #f2f7f3 100%);
             color: var(--brand-ink);
+            overflow-x: clip;
         }
         #root { min-height: 100vh; }
         .nav-shell {
@@ -93,7 +94,7 @@
             background: #ffffff;
         }
         /* Smooth scrolling for anchor links */
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: clip; }
         @keyframes fadeSlideUp {
             from { opacity: 0; transform: translateY(28px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -220,14 +221,14 @@
         {
             "@context": "https://schema.org",
             "@type": "Website",
-            "name": "Adwelt Enterprises",
+            "name": "Adwelt",
             "url": "https://firadwelt06.github.io/Adwelt-website/"
         },
         {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "Adwelt Enterprises",
-        "description": "Remote data analytics consultancy specializing in database management, data analysis, workflow automation, and school database systems including EduTrack and Smart Result NG.",
+        "name": "Adwelt",
+        "description": "Data engineering and database management consulting with Python, SQL, Excel, data automation, analytics, data cleaning, dashboards, and business reporting.",
         "url": "https://firadwelt06.github.io/Adwelt-website/",
         "image": "https://firadwelt06.github.io/Adwelt-website/adwelt-flat-icon.png",
         "email": "adeleyebukola587@gmail.com",
@@ -248,23 +249,6 @@
         /* @jsxFrag React.Fragment */
         /* Animation */
         const { useState, useEffect, useRef } = React;
-        const useCountUp = (target, duration = 1800, start = false) => {
-        const [count, setCount] = useState(0);
-            useEffect(() => {
-                if (!start) return;
-                let startTime = null;
-                const step = (timestamp) => {
-                    if (!startTime) startTime = timestamp;
-                    const progress = Math.min((timestamp - startTime) / duration, 1);
-                    const ease = 1 - Math.pow(1 - progress, 3);
-                    setCount(Math.floor(ease * target));
-                    if (progress < 1) requestAnimationFrame(step);
-                };
-                requestAnimationFrame(step);
-            }, [start, target, duration]);
-            return count;
-        };
-
         /* Generic scroll-reveal hook: returns [ref, isVisible] */
         const useReveal = (threshold = 0.15) => {
             const ref = useRef(null);
@@ -316,52 +300,29 @@
             );
         };
 
-         /* The Stats Bar */
+         /* The Capabilities Bar */
         const StatsBar = () => {
-            const [visible, setVisible] = useState(false);
-            const ref = useRef(null);
-        
-            useEffect(() => {
-                const observer = new IntersectionObserver(
-                    ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-                    { threshold: 0.3 }
-                );
-                if (ref.current) observer.observe(ref.current);
-                return () => observer.disconnect();
-            }, []);
-        
-            const projects = useCountUp(4, 1800, visible);
-            const accuracy = useCountUp(100, 1800, visible);
-            const clients  = useCountUp(10,  1500, visible);
-        
-            const stats = [
-                { value: projects, suffix: '+', label: 'Projects Delivered' },
-                { value: accuracy, suffix: '%', label: 'Data Accuracy Rate' },
-                { value: clients,  suffix: '+', label: 'Happy Clients'      },
-                { value: null,     suffix: '',  label: 'Remote · Global',
-                  custom: '🌍' }
+            const capabilities = [
+                { label: 'Data Engineering', icon: 'database' },
+                { label: 'Database Management', icon: 'table-2' },
+                { label: 'Data Automation & Analytics', icon: 'workflow' },
+                { label: 'Dashboards & Business Reporting', icon: 'bar-chart-3' }
             ];
         
             return (
-                <div ref={ref} className="bg-[#0a2125] py-14">
+                <div className="bg-[#0a2125] py-10">
                     <div className="container mx-auto px-6">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                            {stats.map((s, i) => (
-                                <div
-                                    key={i}
-                                    className={`text-center reveal-scale ${visible ? 'reveal-in' : ''}`}
-                                    style={{ '--reveal-delay': `${i * 120}ms` }}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                            {capabilities.map((capability, index) => (
+                                <Reveal
+                                    key={capability.label}
+                                    variant="reveal-scale"
+                                    delay={index * 80}
+                                    className="flex items-center justify-center gap-3 py-3 text-center"
                                 >
-                                    <div className="text-4xl lg:text-5xl font-black text-white mb-2 tracking-tight">
-                                        {s.custom
-                                            ? s.custom
-                                            : <>{s.value}{s.suffix}</>
-                                        }
-                                    </div>
-                                    <div className="text-slate-400 text-sm font-semibold uppercase tracking-widest">
-                                        {s.label}
-                                    </div>
-                                </div>
+                                    <i data-lucide={capability.icon} className="w-5 h-5 shrink-0 text-teal-700"></i>
+                                    <span className="text-sm font-bold text-slate-700">{capability.label}</span>
+                                </Reveal>
                             ))}
                         </div>
                     </div>
@@ -426,7 +387,7 @@
                 email: formData.email,
                 projectType: formData.projectType,
                 challenge: formData.challenge,
-                subject: `New Inquiry from ${formData.name} — Adwelt Enterprises.`
+                subject: `New Inquiry from ${formData.name} — Adwelt.`
             })
         });
 
@@ -494,7 +455,7 @@
                             <div className="flex items-center space-x-2 relative z-50">
                               <img src="adwelt-flat-icon.png" alt="Adwelt Logo" className="w-10 h-10 object-contain" />  
                                 <span className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-                                    ADWELT<span className="text-orange-300 underline decoration-orange-300/60 decoration-4 underline-offset-4">ENTERPRISES</span>
+                                    ADWELT
                                 </span>
                             </div>
                             
@@ -545,20 +506,21 @@
                             className="hero-animate inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white/90 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-8"
                             style={{ animationDelay: '0.1s' }}
                         >
-                            <i data-lucide="globe" className="w-3 h-3"></i> Available Worldwide • Remote Expert
+                            <i data-lucide="globe" className="w-3 h-3"></i> ADWELT · DATA ENGINEER & DATABASE MANAGEMENT CONSULTANT
                         </div>
                         <h1
                             className="hero-animate text-4xl lg:text-7xl font-black text-white mb-8 tracking-tight leading-tight"
                             style={{ animationDelay: '0.25s' }}
                         >
-                            Turning Raw Data Into <br className="hidden lg:block"/>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#efb55f] to-[#5eb7ae]">Predictable Growth.</span>
+                            Data automation & analytics<br className="hidden lg:block" />
+                            {' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#efb55f] to-[#5eb7ae]">built for better decisions.</span>
                         </h1>
                         <p
                             className="hero-animate text-lg lg:text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed"
                             style={{ animationDelay: '0.42s' }}
                         >
-                            Adwelt Enterprises specializes in database management, workflow automation, and custom data solutions to solve your most complex business problems.
+                            Python, SQL, and Excel for data cleaning, reliable database management, dashboards, and business reporting.
                         </p>
                         <div
                             className="hero-animate flex flex-col sm:flex-row justify-center gap-4"
@@ -917,9 +879,11 @@
                                         Formula 1 Data Engineering Pipeline
                                     </h2>
                                     <p className="text-slate-300 text-lg mb-8">
-                                        An end-to-end Formula 1 data project that stages source CSVs, loads them into MySQL,
-                                        normalizes them into a relational schema, and validates each load. Dagster orchestrates
-                                        ETL work, with analytics models and a lightweight Flask dashboard for reviewing results.
+                                        A local pipeline stages Formula 1 CSVs, validates each load, and normalizes race data into
+                                        an indexed third normal form MySQL schema. Dagster orchestrates repeatable ETL, while the
+                                        hosted Flask dashboard summarizes 1,160 races, 879 drivers, and 214 constructors across
+                                        1950-2026. The project also includes decoupled DNF-risk and finishing-position models,
+                                        plus encrypted backups with a tested restore.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-4">
                                         <a
@@ -930,15 +894,6 @@
                                         >
                                             <i data-lucide="external-link" className="w-4 h-4"></i>
                                             View live dashboard
-                                        </a>
-                                        <a
-                                            href="https://github.com/Firadwelt06/f1-data-project"
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="inline-flex items-center justify-center gap-2 border border-white/10 bg-white/5 px-6 py-3 rounded-xl font-bold hover:border-teal-600/40 transition-colors"
-                                        >
-                                            <i data-lucide="github" className="w-4 h-4"></i>
-                                            Browse repository
                                         </a>
                                     </div>
                                 </Reveal>
@@ -959,11 +914,12 @@
                                     </div>
                                     <ol className="space-y-4">
                                         {[
-                                            { icon: 'file-spreadsheet', label: 'Stage source CSV data' },
-                                            { icon: 'database', label: 'Normalize and load into MySQL' },
-                                            { icon: 'workflow', label: 'Orchestrate ETL with Dagster' },
-                                            { icon: 'chart-no-axes-combined', label: 'Train small analytics models' },
-                                            { icon: 'layout-dashboard', label: 'Review results in a Flask dashboard' }
+                                            { icon: 'file-spreadsheet', label: 'Stage and validate source CSVs' },
+                                            { icon: 'database', label: 'Normalize race data into MySQL' },
+                                            { icon: 'workflow', label: 'Orchestrate repeatable ETL with Dagster' },
+                                            { icon: 'shield-check', label: 'Encrypt backups and test restores' },
+                                            { icon: 'bar-chart-3', label: 'Model DNF risk and finishing position' },
+                                            { icon: 'layout-dashboard', label: 'Review analytics in a Flask dashboard' }
                                         ].map((step, index) => (
                                             <li key={step.label} className="flex items-center gap-4 rounded-xl bg-[#06181c] p-4">
                                                 <span className="text-xs font-bold text-[#efb55f]">{String(index + 1).padStart(2, '0')}</span>
@@ -1096,9 +1052,11 @@
                                         <h4 className="text-2xl font-bold mb-8">Send a Quick Brief</h4>
                                         <form className="space-y-6" onSubmit={handleFormSubmit}>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-slate-200">Your Full Name</label>
+                                                <label htmlFor="contact-name" className="text-sm font-bold text-slate-200">Your Full Name</label>
                                                 <input 
                                                     name="name"
+                                                    id="contact-name"
+                                                    autoComplete="name"
                                                     value={formData.name}
                                                     onChange={handleFormChange}
                                                     required
@@ -1107,10 +1065,12 @@
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-slate-200">Email Address</label>
+                                                <label htmlFor="contact-email" className="text-sm font-bold text-slate-200">Email Address</label>
                                                 <input 
                                                     name="email"
+                                                    id="contact-email"
                                                     type="email"
+                                                    autoComplete="email"
                                                     value={formData.email}
                                                     onChange={handleFormChange}
                                                     required
@@ -1119,9 +1079,10 @@
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-slate-200">Project Type</label>
+                                                <label htmlFor="contact-project-type" className="text-sm font-bold text-slate-200">Project Type</label>
                                                 <select 
                                                     name="projectType"
+                                                    id="contact-project-type"
                                                     value={formData.projectType}
                                                     onChange={handleFormChange}
                                                     className="w-full bg-[#0d242a] border border-white/10 rounded-xl p-4 outline-none focus:ring-2 focus:ring-[#efb55f] text-white">
@@ -1132,9 +1093,10 @@
                                                 </select>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-slate-200">Describe the Challenge</label>
+                                                <label htmlFor="contact-challenge" className="text-sm font-bold text-slate-200">Describe the Challenge</label>
                                                 <textarea 
                                                     name="challenge"
+                                                    id="contact-challenge"
                                                     value={formData.challenge}
                                                     onChange={handleFormChange}
                                                     required
@@ -1161,11 +1123,11 @@
                         <div className="container mx-auto px-6 text-center">
                             <div className="flex items-center justify-center space-x-2 mb-6">
                                 <img src="adwelt-flat-icon.png" alt="Adwelt Logo" className="w-8 h-8 object-contain" />
-                                <span className="text-lg font-bold tracking-tight">ADWELT ENTERPRISES</span>
+                                <span className="text-lg font-bold tracking-tight">ADWELT</span>
                             </div>
-                            <p className="text-slate-300 text-sm max-w-xs mx-auto mb-8">Specialized Data & Analytics Consultancy delivering precision across the globe.</p>
+                            <p className="text-slate-300 text-sm max-w-xs mx-auto mb-8">Data engineering and database management consulting, available worldwide.</p>
                             <div className="pt-8 border-t border-slate-100 text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">
-                                © 2026 ADWELT ENTERPRISES • REMOTE / WORLDWIDE
+                                © 2026 ADWELT • REMOTE / WORLDWIDE
                             </div>
                         </div>
                     </footer>
