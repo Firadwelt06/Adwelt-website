@@ -462,7 +462,7 @@
                             {/* Desktop Links */}
                             <div className="hidden md:flex items-center space-x-8">
                                 <a href="#services" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">Services</a>
-                                <a href="https://firadwelt06.github.io/LANDING-PAGE/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">ExamArena</a>
+                                <a href="#examarena" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">ExamArena</a>
                                 <a href="https://firadwelt06.github.io/Adwelt-website-about/" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">About</a>
                                 <a href="https://firadwelt06.github.io/Adwelt-website-projects/" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">Past Work</a>
                                 <a href="#contact" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">Contact</a>
@@ -485,7 +485,7 @@
                         <div className={`md:hidden absolute top-0 left-0 w-full bg-[#0b1d1f] border-b border-white/10 shadow-2xl transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
                             <div className="pt-24 pb-12 px-6 flex flex-col space-y-6">
                                 <a href="#services" onClick={closeMenu} className="text-xl font-bold text-white border-b border-white/10 pb-4">Services</a>
-                                <a href="https://firadwelt06.github.io/LANDING-PAGE/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="text-xl font-bold text-white border-b border-white/10 pb-4">ExamArena</a>
+                                <a href="#examarena" onClick={closeMenu} className="text-xl font-bold text-white border-b border-white/10 pb-4">ExamArena</a>
                                 <a href="https://firadwelt06.github.io/Adwelt-website-about/" onClick={closeMenu} className="text-xl font-bold text-white border-b border-white/10 pb-4">About</a>
                                 <a href="https://firadwelt06.github.io/Adwelt-website-projects/" onClick={closeMenu} className="text-xl font-bold text-white border-b border-white/10 pb-4">Past Work</a>
                                 <a href="#contact" onClick={closeMenu} className="text-xl font-bold text-white border-b border-white/10 pb-4">Contact</a>
@@ -568,27 +568,74 @@
                         </div>
                     </section>
                     {/* ExamArena Product */}
-                    <section id="examarena" className="py-24 bg-[#0b2426] relative overflow-hidden">
+                    <section id="examarena" className="py-24 bg-[#0a2125] relative overflow-hidden scroll-mt-24">
                         <div className="container mx-auto px-6">
-                            <Reveal className="mx-auto max-w-3xl text-center">
+                            <Reveal className="mx-auto max-w-3xl text-center mb-12">
                                 <div className="inline-block px-4 py-1 bg-teal-600/30 rounded-full text-teal-200 text-xs font-bold uppercase mb-6 tracking-widest">
                                     Adwelt Product
                                 </div>
                                 <h2 className="text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
                                     Meet ExamArena
                                 </h2>
-                                <p className="text-slate-300 text-lg lg:text-xl leading-relaxed mb-10">
-                                    Offline computer-based testing for schools and chemistry students.
-                                    Create questions, run exams, and get results over local Wi-Fi or a
-                                    hotspot — no internet required.
+                                <p className="text-slate-300 text-lg lg:text-xl leading-relaxed">
+                                    Practical exam and learning tools for schools and chemistry students.
+                                    Both products run over local Wi-Fi or a hotspot — no internet required.
                                 </p>
+                            </Reveal>
+                            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                                <Reveal delay={80} className="h-full rounded-3xl border border-white/10 bg-[#0d242a] p-8 lg:p-10">
+                                    <div className="w-12 h-12 rounded-2xl bg-teal-500/15 text-teal-200 flex items-center justify-center mb-6">
+                                        <i data-lucide="school" className="w-6 h-6"></i>
+                                    </div>
+                                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-200 mb-3">For schools</p>
+                                    <h3 className="text-2xl font-bold text-white mb-4">School Assessment Hub</h3>
+                                    <p className="text-slate-300 leading-relaxed mb-7">
+                                        Create and run school exams, manage question banks, and review results and reports.
+                                    </p>
+                                    <a
+                                        href="https://firadwelt06.github.io/LANDING-PAGE/#products"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-[#efb55f] font-bold hover:text-amber-300 transition-colors"
+                                    >
+                                        Explore products <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
+                                    </a>
+                                </Reveal>
+                                <Reveal delay={160} className="h-full rounded-3xl border border-white/10 bg-[#0d242a] p-8 lg:p-10">
+                                    <div className="w-12 h-12 rounded-2xl bg-[#efb55f]/15 text-[#efb55f] flex items-center justify-center mb-6">
+                                        <i data-lucide="flask-conical" className="w-6 h-6"></i>
+                                    </div>
+                                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#efb55f] mb-3">For chemistry students</p>
+                                    <h3 className="text-2xl font-bold text-white mb-4">ChemArena</h3>
+                                    <p className="text-slate-300 leading-relaxed mb-7">
+                                        Learn organic chemistry with lessons, practice, and computer-based tests.
+                                    </p>
+                                    <a
+                                        href="https://firadwelt06.github.io/LANDING-PAGE/#products"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-[#efb55f] font-bold hover:text-amber-300 transition-colors"
+                                    >
+                                        Explore products <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
+                                    </a>
+                                </Reveal>
+                            </div>
+                            <Reveal delay={240} className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
                                 <a
-                                    href="https://firadwelt06.github.io/LANDING-PAGE/"
+                                    href="https://firadwelt06.github.io/LANDING-PAGE/#contact"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center bg-[#efb55f] text-[#06181c] px-8 py-4 rounded-xl font-bold hover:-translate-y-0.5 transition-all shadow-xl"
+                                    className="inline-flex items-center justify-center gap-2 bg-[#efb55f] text-[#06181c] px-8 py-4 rounded-xl font-bold hover:-translate-y-0.5 transition-all shadow-xl"
                                 >
-                                    Explore ExamArena
+                                    Request a demo <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
+                                </a>
+                                <a
+                                    href="https://firadwelt06.github.io/LANDING-PAGE/#products"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all"
+                                >
+                                    Visit ExamArena
                                 </a>
                             </Reveal>
                         </div>
