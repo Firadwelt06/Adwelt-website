@@ -11,6 +11,7 @@
 
     <!-- Open Graph (Facebook/LinkedIn previews) -->
     <meta property="og:title" content="Adwelt | Data Engineer & Database Management Consultant">
+    <meta property="og:site_name" content="Adwelt">
     <meta property="og:description" content="Data automation and analytics with Python, SQL, and Excel, from data cleaning to dashboards and business reporting.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firadwelt06.github.io/Adwelt-website/">
@@ -454,18 +455,18 @@
                         <div className="container mx-auto px-6 flex justify-between items-center">
                             <div className="flex items-center space-x-2 relative z-50">
                               <img src="adwelt-flat-icon.png" alt="Adwelt Logo" className="w-10 h-10 object-contain" />  
-                                <span className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                                <span className={`text-2xl md:text-3xl font-bold tracking-tight ${isMenuOpen ? 'text-white' : 'text-[#172522]'}`}>
                                     ADWELT
                                 </span>
                             </div>
                             
                             {/* Desktop Links */}
                             <div className="hidden md:flex items-center space-x-8">
-                                <a href="#services" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">Services</a>
-                                <a href="#examarena" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">ExamArena</a>
-                                <a href="https://firadwelt06.github.io/Adwelt-website-about/" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">About</a>
-                                <a href="https://firadwelt06.github.io/Adwelt-website-projects/" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">Past Work</a>
-                                <a href="#contact" className="text-sm font-semibold text-white/80 hover:text-orange-300 transition-colors">Contact</a>
+                                <a href="#services" className="text-sm font-semibold text-[#20312e]/80 hover:text-orange-500 transition-colors">Services</a>
+                                <a href="#examarena" className="text-sm font-semibold text-[#20312e]/80 hover:text-orange-500 transition-colors">ExamArena</a>
+                                <a href="https://firadwelt06.github.io/Adwelt-website-about/" className="text-sm font-semibold text-[#20312e]/80 hover:text-orange-500 transition-colors">About</a>
+                                <a href="https://firadwelt06.github.io/Adwelt-website-projects/" className="text-sm font-semibold text-[#20312e]/80 hover:text-orange-500 transition-colors">Past Work</a>
+                                <a href="#contact" className="text-sm font-semibold text-[#20312e]/80 hover:text-orange-500 transition-colors">Contact</a>
                                 <a href={whatsappLink} target="_blank" rel="noreferrer" className="bg-orange-500 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-400 transition-all shadow-md flex items-center gap-2">
                                    <i data-lucide="message-circle" className="w-4 h-4"></i> Consult Now
                                 </a>
@@ -473,7 +474,7 @@
 
                             {/* Mobile Toggle Button */}
                             <button 
-                                className="md:hidden p-2 relative z-50 text-white" 
+                                className={`md:hidden p-2 relative z-50 ${isMenuOpen ? 'text-white' : 'text-[#172522]'}`} 
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 aria-label="Toggle Menu"
                             >
@@ -578,8 +579,8 @@
                                     Meet ExamArena
                                 </h2>
                                 <p className="text-slate-300 text-lg lg:text-xl leading-relaxed">
-                                    Practical exam and learning tools for schools and chemistry students.
-                                    Both products run over local Wi-Fi or a hotspot — no internet required.
+                                    Reliable local-network assessment tools for secondary schools and chemistry students.
+                                    The flagship ExamArena CBT pilot is prepared and rehearsed before a live school exam.
                                 </p>
                             </Reveal>
                             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -588,17 +589,17 @@
                                         <i data-lucide="school" className="w-6 h-6"></i>
                                     </div>
                                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-200 mb-3">For schools</p>
-                                    <h3 className="text-2xl font-bold text-white mb-4">School Assessment Hub</h3>
+                                    <h3 className="text-2xl font-bold text-white mb-4">ExamArena CBT Pilot</h3>
                                     <p className="text-slate-300 leading-relaxed mb-7">
-                                        Create and run school exams, manage question banks, and review results and reports.
+                                        A guided, discounted deployment for schools: staff onboarding, a readiness rehearsal for up to 60 candidates, and support for the first assessment.
                                     </p>
                                     <a
-                                        href="https://firadwelt06.github.io/LANDING-PAGE/#products"
+                                        href="https://lantech.site.je/cbt-assessment-app.html"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 text-[#efb55f] font-bold hover:text-amber-300 transition-colors"
                                     >
-                                        Explore products <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
+                                        Explore the pilot <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
                                     </a>
                                 </Reveal>
                                 <Reveal delay={160} className="h-full rounded-3xl border border-white/10 bg-[#0d242a] p-8 lg:p-10">
@@ -611,7 +612,7 @@
                                         Learn organic chemistry with lessons, practice, and computer-based tests.
                                     </p>
                                     <a
-                                        href="https://firadwelt06.github.io/LANDING-PAGE/#products"
+                                        href="https://lantech.site.je/#products"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 text-[#efb55f] font-bold hover:text-amber-300 transition-colors"
@@ -622,15 +623,15 @@
                             </div>
                             <Reveal delay={240} className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
                                 <a
-                                    href="https://firadwelt06.github.io/LANDING-PAGE/#contact"
+                                    href="https://lantech.site.je/cbt-assessment-app.html#contact"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-2 bg-[#efb55f] text-[#06181c] px-8 py-4 rounded-xl font-bold hover:-translate-y-0.5 transition-all shadow-xl"
                                 >
-                                    Request a demo <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
+                                    Discuss a school pilot <i data-lucide="arrow-up-right" className="w-4 h-4"></i>
                                 </a>
                                 <a
-                                    href="https://firadwelt06.github.io/LANDING-PAGE/#products"
+                                    href="https://lantech.site.je/cbt-assessment-app.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all"
